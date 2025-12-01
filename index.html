@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <title>Proposal Pelatihan AI - Peek.Me Naturals x TalentCraftLab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    /* ================== FINAL CSS — GRID 2:1, FULL-WIDTH ================== */
+
+    :root{
+      --bg-page: #f5faf7;
+      --panel-bg: #ffffff;
+      --panel-weak: #f6fbf8;
+      --accent: #238067;
+      --accent-strong: #1a5a45;
+      --accent-soft: rgba(35,128,103,0.12);
+      --text: #0b1220;
+      --subtext: #4b5b63;
+      --muted: #6b7280;
+      --border: rgba(15,23,42,0.06);
+      --card-shadow: 0 14px 34px rgba(7,12,10,0.06);
+      --radius-lg: 18px;
+    }
+    
+    html { font-size: 17px; }
+    * { box-sizing: border-box; }
+    body{
+      font-family: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      margin:0;
+      padding:0;                  /* full bleed */
+      background: var(--bg-page);
+      color: var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    
+    /* Deck full-width */
+    .deck{
+      max-width:none;
+      width:100%;
+      min-height:100vh;
+      margin:0;
+      border-radius:0;
+      background: var(--panel-bg);
+      border:none;
+      box-shadow:none;
+      display:flex;
+      flex-direction:column;
+      overflow:hidden;
+    }
+    
+    /* Header */
+    .deck-header{
+      display:flex; justify-content:space-between; align-items:center;
+      padding:14px 32px;
+      border-bottom:1px solid var(--border);
+      background: var(--panel-bg);
+    }
+    .deck-header-left{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .brand-mark{
+      width:40px; height:40px; border-radius:10px;
+      background:#eaf9ef; display:flex; align-items:center; justify-content:center;
+      flex-shrink:0;
+      overflow:hidden;
+    }
+    .brand-mark img{
+      max-width:100%;
+      max-height:100%;
+      object-fit:contain;
+    }
+    .brand-text{
+      display:flex;
+      flex-direction:column;
+    }
+    .brand-text-main{ font-size:15px; font-weight:700; }
+    .brand-text-sub{ font-size:12px; color:var(--muted); margin-top:2px; }
+    .deck-header-right{
+      display:flex;
+      align-items:center;
+    }
+    
+    /* Pill status */
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 12px;
+      border-radius:999px;
+      background:var(--panel-weak);
+      border:1px solid rgba(15,23,42,0.06);
+      font-size:13px;
+      color:var(--subtext);
+    }
+    .pill-dot{
+      width:8px;
+      height:8px;
+      border-radius:999px;
+      background:var(--accent);
+      box-shadow:0 0 0 4px rgba(35,128,103,0.16);
+      flex-shrink:0;
+    }
+    
+    /* Slides wrapper & container */
+    .slides-wrapper{
+      padding:24px 32px 18px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      flex:1;
+      background:var(--bg-page);
+    }
+    .slides{
+      position:relative;
+      flex:1;
+      min-height:520px;
+      border-radius:20px;
+      background: var(--panel-bg);
+      border:1px solid var(--border);
+      overflow:hidden;
+      padding:12px;
+      box-shadow: 0 26px 60px rgba(6,10,8,0.04);
+    }
+    
+    /* Slide base */
+    .slide{
+      position:absolute; inset:0; padding:30px 40px 40px;
+      display:none; flex-direction:column; gap:16px; overflow:auto;
+    }
+    .slide.active{ display:flex; }
+    
+    /* Typography */
+    .slide-kicker{ font-size:12px; font-weight:700; letter-spacing:0.12em; color:var(--accent-strong); text-transform:uppercase; }
+    .title-main{ font-size:36px; font-weight:800; line-height:1.04; }
+    .title-highlight{ color:var(--accent); font-weight:800; }
+    .title-meta{ font-size:15px; color:var(--muted); margin-top:6px; }
+    .slide-title{ font-size:28px; font-weight:700; }
+    .slide-subtitle{ font-size:15px; color:var(--subtext); max-width:900px; }
+    
+    /* Grid */
+    .slide-grid{ display:grid; grid-template-columns: 2fr 1fr; gap:22px; margin-top:16px; align-items:start; }
+    .slide-grid-2{ display:grid; grid-template-columns:repeat(2, 1fr); gap:18px; margin-top:12px; }
+    
+    /* Cards */
+    .card{
+      background:var(--panel-bg);
+      border-radius:14px;
+      padding:18px;
+      border:1px solid rgba(0,0,0,0.06);
+      box-shadow:var(--card-shadow);
+      overflow:visible;
+    }
+    .card-subtle{
+      background:var(--panel-weak);
+      border-radius:12px; padding:14px;
+      border:1px solid rgba(0,0,0,0.04);
+    }
+    
+    .card-header{ display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:6px; }
+    .card-title{ font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.12em; }
+    .badge{ font-size:12px; padding:5px 10px; border-radius:10px; background:#f5f5f5; border:1px solid rgba(0,0,0,0.06); }
+    .badge-accent{ background:var(--accent-soft); color:var(--accent-strong); border-color: rgba(35,128,103,0.12); }
+    
+    /* Lists & tags */
+    .list{ display:flex; flex-direction:column; gap:8px; font-size:15px; line-height:1.55; color:var(--subtext); padding-left:0; margin:0; list-style:none; }
+    .list li{ position:relative; padding-left:20px; }
+    .list li::before{ content:""; position:absolute; left:0; top:10px; width:8px; height:8px; border-radius:50%; background:var(--accent); box-shadow:0 8px 18px rgba(35,128,103,0.06); }
+    .list-compact li{ margin-bottom:2px; }
+    
+    .tag-row{ display:flex; gap:8px; flex-wrap:wrap; margin-top:8px; }
+    .tag{ font-size:13px; padding:6px 10px; border-radius:999px; background:#f8fefb; border:1px solid rgba(0,0,0,0.04); color:var(--subtext); }
+    .tag-strong{ background:var(--accent-soft); color:var(--accent-strong); border-color: rgba(35,128,103,0.10); }
+    
+    /* Images */
+    .slides img, .slide img, .card img { display:block; max-width:100%; height:auto; object-fit:cover; border-radius:12px; box-shadow: 0 10px 24px rgba(15,23,42,0.04); border:1px solid rgba(15,23,42,0.03); }
+    
+    .hero-art{
+      position:absolute;
+      right:36px;
+      top:32px;
+      width:300px;
+      height:200px;
+      object-fit:cover;
+      object-position:center;
+      border-radius:12px;
+      z-index:1;
+      box-shadow: 0 20px 46px rgba(15,23,42,0.06);
+      opacity:0.98;
+      pointer-events:none;
+      border:1px solid rgba(15,23,42,0.04);
+    }
+    .slide > * { position:relative; z-index:2; }
+    
+    .slide-art-inline{ display:block; width:100%; height:180px; object-fit:cover; border-radius:12px; margin-top:24px; border:1px solid rgba(15,23,42,0.03); box-shadow: 0 12px 28px rgba(15,23,42,0.04); }
+    .card-art{ width:100%; height:140px; object-fit:cover; border-radius:10px; margin-top:24px; }
+    .card.has-art{ display:grid; grid-template-columns: 2fr 1fr; gap:18px; align-items:start; padding:16px; }
+    .card.has-art .card-art{ width:100%; height:120px; object-fit:cover; border-radius:10px; }
+    .card img:not(.inline){ float:none; margin:20; max-width:100%; width:auto; height:auto; }
+    
+    /* Extra UI */
+    .title-bottom-row{ display:flex; gap:12px; flex-wrap:wrap; margin-top:12px; }
+    .title-chip{ border-radius:999px; padding:8px 12px; border:1px solid rgba(15,23,42,0.04); font-size:13px; color:var(--subtext); background:var(--panel-weak); display:inline-flex; align-items:center; gap:8px; }
+    
+    .quote-box{ margin-top:12px; border-radius:12px; padding:12px; background:var(--panel-weak); border:1px solid rgba(15,23,42,0.03); }
+    .quote-author{ margin-top:6px; font-size:13px; color:var(--subtext); }
+    
+    .meta-grid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:8px 18px;
+      margin:10px 0 6px;
+      font-size:13px;
+    }
+    .meta-item-label{
+      color:var(--muted);
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:0.08em;
+    }
+    .meta-item-value{
+      font-weight:600;
+      color:var(--text);
+    }
+    
+    .highlight-text{ color:var(--accent-strong); font-weight:600; }
+    .big-number{ font-size:26px; font-weight:800; color:var(--accent-strong); }
+    .price{ font-size:24px; font-weight:800; color:var(--accent-strong); margin-bottom:4px; }
+    .price-note{ font-size:13px; color:var(--muted); }
+    
+    table{
+      width:100%;
+      border-collapse:collapse;
+      font-size:14px;
+    }
+    thead tr{ background:var(--panel-weak); }
+    th, td{
+      padding:10px 8px;
+      border-bottom:1px solid rgba(15,23,42,0.06);
+      text-align:left;
+    }
+    th{
+      font-weight:700;
+      font-size:13px;
+      text-transform:uppercase;
+      letter-spacing:0.06em;
+      color:var(--muted);
+    }
+    
+    /* Footer controls */
+    .slides-footer{ display:flex; align-items:center; justify-content:space-between; gap:12px; padding:8px 32px 16px; background:var(--bg-page); }
+    .controls{ display:flex; align-items:center; gap:10px; }
+    .btn{ font-size:14px; padding:9px 14px; border-radius:999px; border:1px solid rgba(0,0,0,0.08); background:var(--panel-bg); cursor:pointer; color:var(--text); }
+    .btn-primary{ background:var(--accent); color:white; box-shadow: 0 8px 22px rgba(35,128,103,0.06); border-color: rgba(35,128,103,0.12); }
+    
+    .pager{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+      font-size:13px;
+      color:var(--subtext);
+    }
+    .pager-dots{
+      display:flex;
+      gap:6px;
+      align-items:center;
+    }
+    .pager-dot{ width:8px; height:8px; border-radius:999px; background:#d1d5d8; opacity:0.8; transition:all .18s ease; }
+    .pager-dot.active{ width:14px; background:var(--accent); opacity:1; box-shadow: 0 8px 22px rgba(35,128,103,0.06); }
+    
+    .progress-rail{ position:relative; flex:1; height:8px; border-radius:999px; background:var(--panel-weak); overflow:hidden; border:1px solid rgba(15,23,42,0.03); }
+    .progress-bar{ position:absolute; inset:0; width:0%; border-radius:999px; background: linear-gradient(90deg,var(--accent), #86e3b5); box-shadow: 0 6px 16px rgba(35,128,103,0.06); transition: width .22s ease-out; }
+    
+    .key-hint{ display:flex; align-items:center; gap:8px; font-size:13px; color:var(--subtext); }
+    .key{ display:inline-block; padding:2px 8px; border-radius:6px; border:1px solid rgba(15,23,42,0.06); background:var(--panel-weak); font-size:12px; color:var(--text); }
+    
+    .btn:focus, .card:focus, .brand-mark:focus { outline:3px solid rgba(35,128,103,0.10); outline-offset:3px; }
+    
+    @media (max-width:980px){
+      .deck-header{ padding:12px 18px; }
+      .slides-wrapper{ padding:18px; }
+      .slides{ border-radius:16px; }
+      .slide{ padding:20px; }
+      .slide-grid, .slide-grid-2{ grid-template-columns:1fr; }
+      .hero-art{ display:none; }
+      .card.has-art{ grid-template-columns: 1fr; }
+      .card-art{ width:100%; height:170px; }
+      .title-main{ font-size:30px; }
+      .slide-title{ font-size:22px; }
+      html { font-size:16px; }
+      .slides-footer{ padding:8px 18px 14px; }
+    }
+    
+    @media (max-width:640px){
+      html{ font-size:15px; }
+      .deck-header{ padding:10px 14px; }
+      .slides-wrapper{ padding:12px 10px 10px; }
+      .slides{ border-radius:14px; }
+      .brand-mark{ width:36px; height:36px; }
+      .title-main{ font-size:22px; }
+      .slide-art-inline{ height:140px; }
+      .btn{ padding:8px 12px; font-size:13px; }
+      .slides-footer{ padding:8px 10px 12px; flex-direction:column; align-items:flex-start; }
+    }
+    
+    p, li { line-height:1.5; color:var(--subtext); }
+  </style>
+</head>
+<body>
+  <div class="deck" role="region" aria-label="Proposal slides">
+    <header class="deck-header">
+      <div class="deck-header-left">
+        <div class="brand-mark" aria-hidden="true">
+          <img src="https://insight.talentcraftlab.com/wp-content/uploads/2024/07/Logo-KecilArtboard-1-1.png" alt="TalentCraftLab logo" />
+        </div>
+        <div class="brand-text">
+          <div class="brand-text-main">TalentCraftLab</div>
+          <div class="brand-text-sub">AI Adoption & Workflow Enablement Program</div>
+        </div>
+      </div>
+
+      <div class="deck-header-right">
+        <div class="pill" aria-hidden="true"><span class="pill-dot" aria-hidden="true"></span><span>Proposal • NRK &amp; PMN</span></div>
+      </div>
+    </header>
+
+    <div class="slides-wrapper">
+      <div class="slides">
+        
+        <!-- Slide 1 -->
+        <section class="slide active" id="slide-1" aria-label="Slide 1">
+          <div class="slide-kicker">Proposal Program Pelatihan</div>
+          <div class="title-main">Memulai Transformasi <span class="title-highlight">AI yang Ringan &amp; Praktis</span></div>
+          <div class="title-meta">Untuk: <strong>NRK &amp; PMN</strong> • Disusun oleh <strong>TalentCraftLab</strong> • Format: <strong>Daring (online)</strong> • Rencana: <strong>Januari 2026</strong></div>
+
+          <div class="slide-grid">
+            <div>
+              <article class="card" aria-labelledby="exec-title">
+                <div class="card-header">
+                  <div class="card-title" id="exec-title">Ringkasan Eksekutif</div>
+                  <div class="badge badge-accent">Snapshot</div>
+                </div>
+
+                <div class="meta-grid" style="margin-bottom:8px">
+                  <div>
+                    <div class="meta-item-label">Klien</div>
+                    <div class="meta-item-value">NRK &amp; PMN</div>
+                  </div>
+                  <div>
+                    <div class="meta-item-label">Peserta</div>
+                    <div class="meta-item-value">20 karyawan (staf ke atas, non-produksi)</div>
+                  </div>
+                  <div>
+                    <div class="meta-item-label">Format</div>
+                    <div class="meta-item-value">Pelatihan daring</div>
+                  </div>
+                  <div>
+                    <div class="meta-item-label">Penyelenggara</div>
+                    <div class="meta-item-value">TalentCraftLab</div>
+                  </div>
+                </div>
+
+                <img class="slide-art-inline" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=7c3b9a0a1a2f4e3e6b0c8b1f2a8d9c3f" alt="Illustrasi kerja tim" />
+
+                <ul class="list list-compact" style="margin-top:12px;">
+                  <li>Program dirancang untuk <span class="highlight-text">ringan secara mental, sangat praktis, dan berbasis konteks kerja harian</span>.</li>
+                  <li>Fokus pada <span class="highlight-text">micro-workflow dan quick wins</span> yang langsung bisa dipakai, bukan sekadar teori.</li>
+                  <li>Menjawab tantangan adopsi AI: rendahnya penggunaan, keterbatasan use case, serta kebutuhan akan kerangka etika.</li>
+                </ul>
+              </article>
+            </div>
+
+            <div>
+              <aside class="card card-subtle" aria-labelledby="target-title">
+                <div class="card-header">
+                  <div class="card-title" id="target-title">Target Besar</div>
+                  <div class="badge">Outcome</div>
+                </div>
+
+                <div style="display:flex; gap:12px; align-items:center">
+                  <div class="big-number">15% → 70%+</div>
+                  <div style="font-size:14px; color:var(--subtext); max-width:260px">
+                    Peningkatan tingkat adopsi AI dari sekitar <span class="highlight-text">15%</span> menjadi <span class="highlight-text">minimal 70%</span> melalui pembelajaran terstruktur dan praktik langsung.
+                  </div>
+                </div>
+
+                <div style="margin-top:12px;">
+                  <img class="card-art" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=4c8f9a7aa7b1f1a1c9a3b2c7d8e9f6b2" alt="Target illustration" aria-hidden="true" />
+                </div>
+
+                <div class="tag-row" style="margin-top:12px;">
+                  <div class="tag tag-strong">AI Adoption</div>
+                  <div class="tag">Workflow Optimization</div>
+                  <div class="tag">Ethical Use</div>
+                  <div class="tag">Leadership Mindset</div>
+                </div>
+              </aside>
+            </div>
+          </div>
+
+          <div class="title-bottom-row">
+            <div class="title-chip">👥 <strong>Jumlah peserta:</strong>&nbsp;20</div>
+            <div class="title-chip">🖥️ <strong>Format:</strong>&nbsp;100% online, sesi 2–4 jam</div>
+            <div class="title-chip">⭐ <strong>Paket rekomendasi:</strong>&nbsp;Medium (12 jam)</div>
+          </div>
+
+          <div class="quote-box" role="note">
+            <div style="font-size:15px;"><span style="color:var(--accent-strong); font-weight:800">“</span> AI bukan menggantikan manusia—AI memperluas kapasitas manusia.</div>
+            <div class="quote-author">TalentCraftLab — Craft Your Best Self</div>
+          </div>
+        </section>
+
+        <!-- Slide 2 -->
+        <section class="slide" id="slide-2" aria-label="Slide 2">
+          <div class="slide-kicker">Latar Belakang</div>
+          <div class="slide-title">Tantangan Adopsi AI di NRK &amp; PMN</div>
+          <div class="slide-subtitle">Berdasarkan hasil Training Need Analysis (TNA) teridentifikasi beberapa tantangan kunci yang perlu dijawab oleh program.</div>
+
+          <div class="slide-grid-2">
+            <div class="card">
+              <div class="card-header"><div class="card-title">Temuan Utama TNA (1)</div><div class="badge">Current State</div></div>
+              <ul class="list">
+                <li><strong>Tingkat adopsi rendah</strong> — hanya sekitar 15% karyawan yang menggunakan AI secara rutin.</li>
+                <li><strong>Penggunaan terbatas</strong> — sebagian besar masih pada fitur dasar karena anggapan AI rumit.</li>
+                <li><strong>Kurang manfaat praktis</strong> — dampak efisiensi belum terlihat sehingga motivasi eksplorasi rendah.</li>
+              </ul>
+              <img class="slide-art-inline" src="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=25a3f1b8a7f1d3a4e2c6b9c3a7d8e6b9" alt="Context illustration" />
+            </div>
+
+            <div class="card">
+              <div class="card-header"><div class="card-title">Temuan Utama TNA (2)</div><div class="badge">Behaviour &amp; System</div></div>
+              <ul class="list">
+                <li><strong>Ketidakjelasan posisi AI</strong> — belum jelas bagian workflow yang paling tepat dioptimalkan dengan AI.</li>
+                <li><strong>Resistensi psikologis</strong> — kekhawatiran salah pakai, takut dianggap 'malas', dan ragu pada akurasi AI.</li>
+                <li><strong>Kebutuhan etika</strong> — diperlukan panduan untuk penggunaan AI yang aman dan bertanggung jawab.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card-subtle" style="margin-top:12px;">
+            <div class="pill" role="status">
+              <div class="pill-dot" aria-hidden="true"></div>
+              <div style="margin-left:8px; font-size:14px"><strong>Kesimpulan TNA:</strong> tim membutuhkan program sangat praktis, ringan, dan berbasis konteks kerja harian—mendorong eksplorasi bukan sekadar konsep.</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 3 -->
+        <section class="slide" id="slide-3" aria-label="Slide 3">
+          <div class="slide-kicker">Peluang Transformasi</div>
+          <div class="slide-title">Dari Kerja Manual ke Workflow yang Lebih Cerdas</div>
+          <div class="slide-subtitle">Dengan program tepat sasaran, AI menjadi asisten kerja yang membantu tim bekerja lebih cepat, rapi, dan kreatif—tanpa menambah beban.</div>
+
+          <div class="slide-grid">
+            <div class="card">
+              <div class="card-header"><div class="card-title">Manfaat Utama</div><div class="badge">Impact</div></div>
+              <ul class="list">
+                <li><strong>Efisiensi waktu</strong> — potensi penghematan <span class="highlight-text">30–50%</span> untuk tugas rutin (email, riset, laporan, dst).</li>
+                <li><strong>Peningkatan leadership</strong> — kemampuan memberi arahan ke AI meningkatkan kepercayaan diri kerja.</li>
+                <li><strong>Optimalisasi workflow</strong> — proses lebih sistematis dengan output konsisten.</li>
+                <li><strong>Fondasi etika digital</strong> — landasan privasi, bias, dan quality check.</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <div class="card-header"><div class="card-title">Contoh Area Manfaat</div><div class="badge">Use Case</div></div>
+              <ul class="list list-compact">
+                <li>Marketing: ide konten, caption, kalender campaign.</li>
+                <li>Admin: template email, notulen, ringkasan dokumen.</li>
+                <li>Operasional: analisis sederhana, scenario planning.</li>
+              </ul>
+              <div class="tag-row" style="margin-top:12px;">
+                <div class="tag tag-strong">30–50% penghematan waktu</div>
+                <div class="tag">Konten konsisten</div>
+                <div class="tag">Keputusan terstruktur</div>
+                <div class="tag">Risk-aware</div>
+              </div>
+              <img class="card-art" src="https://images.unsplash.com/photo-1497493292307-31c376b6e479?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=2b1f1a3c9b7d4f6e8a9e3b1c2d4f5a7d" alt="Use case visual" aria-hidden="true" />
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 4 -->
+        <section class="slide" id="slide-4" aria-label="Slide 4">
+          <div class="slide-kicker">Tujuan Program</div>
+          <div class="slide-title">Apa yang Ingin Kita Capai Bersama</div>
+          <div class="slide-subtitle">Tujuan program diukur pada level perilaku, skill, dan tingkat adopsi AI di organisasi.</div>
+
+          <div class="slide-grid-2">
+            <div class="card">
+              <div class="card-header"><div class="card-title">Tujuan Pembelajaran</div><div class="badge">Learning Goals</div></div>
+              <ul class="list">
+                <li><strong>Produktivitas &amp; kualitas kerja</strong> — bekerja <span class="highlight-text">lebih cerdas dan lebih cepat</span> dengan AI.</li>
+                <li><strong>Penguasaan micro-workflow</strong> — peserta menguasai micro-workflow yang langsung diimplementasikan.</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <div class="card-header"><div class="card-title">Tujuan Organisasi</div><div class="badge">Business Goals</div></div>
+              <ul class="list">
+                <li><strong>Peningkatan adopsi AI</strong> — naik dari ~<span class="highlight-text">15%</span> menjadi <span class="highlight-text">70%+</span>.</li>
+                <li><strong>Etika &amp; kehati-hatian</strong> — prinsip privasi, etika, dan quality check tertanam.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card-subtle" style="margin-top:12px;">
+            <div class="pill">
+              <div class="pill-dot" aria-hidden="true"></div>
+              <div style="margin-left:8px; font-size:14px"><strong>Intinya:</strong> bukan sekadar 'cara pakai AI' — melainkan membangun <span class="highlight-text">cara berpikir</span> untuk integrasi AI yang sehat dan berkelanjutan.</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 5 -->
+        <section class="slide" id="slide-5" aria-label="Slide 5">
+          <div class="slide-kicker">Struktur Program</div>
+          <div class="slide-title">Tiga Pilihan Paket yang Fleksibel</div>
+          <div class="slide-subtitle">100% daring, sesi 2–4 jam agar mudah integrasi dengan jam kerja tim.</div>
+
+          <div class="slide-grid">
+            <div class="card">
+              <div class="card-header"><div class="card-title">Format Umum</div><div class="badge">Delivery</div></div>
+              <ul class="list list-compact">
+                <li>Durasi per sesi: <strong>2–4 jam</strong>.</li>
+                <li>Metode: <strong>pemantik insight</strong>, <strong>demonstrasi live</strong>, <strong>hands-on</strong>.</li>
+                <li>Platform: Zoom / Google Meet / Teams.</li>
+                <li>Fokus: <strong>use case nyata</strong>.</li>
+              </ul>
+              <img class="slide-art-inline" src="https://images.unsplash.com/photo-1513258496099-48168024aec0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Delivery format" />
+            </div>
+
+            <div class="card">
+              <div class="card-header"><div class="card-title">Pilihan Paket</div><div class="badge">Options</div></div>
+              <ul class="list">
+                <li><strong>Paket 1 — Lite</strong> • 6 jam (3×2 jam) — dasar, quick wins.</li>
+                <li><strong>Paket 2 — Medium ⭐</strong> • 12 jam (4×3 jam) — pendalaman &amp; breakout.</li>
+                <li><strong>Paket 3 — Intensive</strong> • 24 jam (6×4 jam) — AI Playbook &amp; SOP.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 6 -->
+        <section class="slide" id="slide-6" aria-label="Slide 6">
+          <div class="slide-kicker">Paket 1 — Lite Program</div>
+          <div class="slide-title">AI Reality Check &amp; Quick Wins</div>
+          <div class="slide-subtitle">Langkah ringan untuk membangun rasa percaya dan use case praktis.</div>
+
+          <div class="slide-grid">
+            <div class="card">
+              <div class="card-header"><div class="card-title">Gambaran Paket</div><div class="badge">Lite</div></div>
+              <ul class="list list-compact">
+                <li><strong>Total:</strong> 6 jam (3×2 jam).</li>
+                <li><strong>Fokus:</strong> mindset, dasar prompt, micro-workflow.</li>
+                <li><strong>Output:</strong> 10–15 workflow &amp; ~50 prompt efektif.</li>
+                <li><strong>Target:</strong> adopsi 50–60% awal.</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <div class="card-header"><div class="card-title">Investasi</div><div class="badge">Fee</div></div>
+              <div class="price">Rp 8.000.000</div>
+              <div class="price-note">Termasuk platform, fasilitator, operasional (belum PPN; TalentCraftLab non-PKP).</div>
+              <div class="tag-row" style="margin-top:12px;">
+                <div class="tag tag-strong">Entry-level</div>
+                <div class="tag">Quick Wins</div>
+                <div class="tag">Low Mental Load</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 7 -->
+        <section class="slide" id="slide-7" aria-label="Slide 7">
+          <div class="slide-kicker">Paket 1 — Lite Program</div>
+          <div class="slide-title">Rundown Sesi</div>
+
+          <div class="card">
+            <div class="card-header"><div class="card-title">Sesi 1 (2 jam)</div><div class="badge">Day 1</div></div>
+            <ul class="list list-compact">
+              <li>Membedah mitos vs realitas AI.</li>
+              <li>Demonstrasi 5 use case relevan.</li>
+              <li>Peran AI sebagai alat bantu (leadership mindset).</li>
+              <li>Identifikasi 3 tugas harian tiap peserta.</li>
+            </ul>
+          </div>
+
+          <div class="slide-grid-2" style="margin-top:10px;">
+            <div class="card">
+              <div class="card-header"><div class="card-title">Sesi 2 (2 jam)</div><div class="badge">Day 2</div></div>
+              <ul class="list list-compact">
+                <li>Pengenalan prompt engineering dasar.</li>
+                <li>Tools: ChatGPT, Notion, Canva (pemula).</li>
+                <li>10 template prompt untuk tugas umum.</li>
+                <li>Guided practice pada tugas nyata.</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <div class="card-header"><div class="card-title">Sesi 3 (2 jam)</div><div class="badge">Day 3</div></div>
+              <ul class="list list-compact">
+                <li>Breakout fungsi: Marketing, Admin, Ops.</li>
+                <li>Bangun 2–3 workflow sederhana per fungsi.</li>
+                <li>Ethical AI 101 &amp; action plan 30 hari.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 8 -->
+        <section class="slide" id="slide-8" aria-label="Slide 8">
+          <div class="slide-kicker">Paket 1 — Lite Program</div>
+          <div class="slide-title">Deliverables &amp; Target Output</div>
+
+          <div class="slide-grid-2">
+            <div class="card">
+              <div class="card-header"><div class="card-title">Deliverables</div><div class="badge">What You Get</div></div>
+              <ul class="list list-compact">
+                <li><strong>Prompt Library</strong> 50+ template.</li>
+                <li><strong>Template micro-workflow</strong> siap pakai.</li>
+                <li><strong>Quick reference guide</strong>.</li>
+                <li>Rekaman semua sesi.</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <div class="card-header"><div class="card-title">Target Output</div><div class="badge">Impact</div></div>
+              <ul class="list list-compact">
+                <li><strong>10–15 workflow</strong> terbangun.</li>
+                <li><strong>~50 prompt</strong> efektif.</li>
+                <li>Target adopsi awal: <strong>50–60%</strong>.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 9 -->
+        <section class="slide" id="slide-9" aria-label="Slide 9">
+          <div class="slide-kicker">Paket 2 — Medium Program ⭐</div>
+          <div class="slide-title">Program Rekomendasi: Dari Dasar ke Praktik Mendalam</div>
+          <div class="slide-subtitle">Keseimbangan antara kedalaman materi, praktik per fungsi, dan etika.</div>
+
+          <div class="slide-grid">
+            <div class="card">
+              <div class="card-header"><div class="card-title">Gambaran Paket</div><div class="badge">Medium ⭐</div></div>
+              <ul class="list list-compact">
+                <li><strong>Total:</strong> 12 jam (4×3 jam).</li>
+                <li>Struktur terintegrasi: mindset → prompt → workflow.</li>
+                <li>Use case marathon &amp; dokumentasi workflow.</li>
+                <li>Target adopsi: <strong>70–80%</strong>.</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <div class="card-header"><div class="card-title">Investasi</div><div class="badge">Fee</div></div>
+              <div class="price">Rp 15.000.000</div>
+              <div class="price-note">Termasuk platform, fasilitator, biaya operasional (belum PPN).</div>
+              <div class="tag-row" style="margin-top:12px;">
+                <div class="tag tag-strong">Recommended</div>
+                <div class="tag">Deeper Practice</div>
+                <div class="tag">Breakout</div>
+                <div class="tag">Ethics</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 10 -->
+        <section class="slide" id="slide-10" aria-label="Slide 10">
+          <div class="slide-kicker">Paket 2 — Medium Program</div>
+          <div class="slide-title">Rundown Sesi (Hari 1–2)</div>
+
+          <div class="card">
+            <div class="card-header"><div class="card-title">Hari 1 — Sesi 1 (3 jam)</div><div class="badge">Mindset &amp; Use Case</div></div>
+            <ul class="list list-compact">
+              <li>Analisis hambatan adopsi &amp; konteks NRK &amp; PMN.</li>
+              <li>7 killer use case dengan penghematan nyata.</li>
+              <li>Identifikasi 5 tugas harian per peserta.</li>
+              <li>Framework <strong>Context → Instruction → Output</strong>.</li>
+            </ul>
+          </div>
+
+          <div class="card" style="margin-top:10px;">
+            <div class="card-header"><div class="card-title">Hari 2 — Sesi 2 (3 jam)</div><div class="badge">Prompt &amp; Use Case Marathon</div></div>
+            <ul class="list list-compact">
+              <li>Penggunaan ChatGPT, Notion, Canva (level menengah).</li>
+              <li>Guided exploration: bawa 1 tugas nyata.</li>
+              <li>Breakout: Marketing / Admin / Ops.</li>
+              <li>Praktik langsung dengan fasilitator.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Slide 11 -->
+        <section class="slide" id="slide-11" aria-label="Slide 11">
+          <div class="slide-kicker">Paket 2 — Medium Program</div>
+          <div class="slide-title">Rundown Sesi (Hari 3–4)</div>
+
+          <div class="card">
+            <div class="card-header"><div class="card-title">Hari 3 — Sesi 3 (3 jam)</div><div class="badge">Use Case &amp; Advanced</div></div>
+            <ul class="list list-compact">
+              <li>Membangun 5–7 workflow lintas fungsi.</li>
+              <li>Dokumentasi workflow di Notion/Google Docs.</li>
+              <li>Breakout mendalam per divisi (Marketing/Admin/Ops).</li>
+            </ul>
+          </div>
+
+          <div class="card" style="margin-top:10px;">
+            <div class="card-header"><div class="card-title">Hari 4 — Sesi 4 (3 jam)</div><div class="badge">Ethics &amp; Showcase</div></div>
+            <ul class="list list-compact">
+              <li>Studi kasus bias, privasi, dan akurasi.</li>
+              <li>Showcase workflow peserta &amp; voting.</li>
+              <li>Action plan 90 hari untuk keberlanjutan.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Slide 12 -->
+        <section class="slide" id="slide-12" aria-label="Slide 12">
+          <div class="slide-kicker">Paket 2 — Medium Program</div>
+          <div class="slide-title">Deliverables &amp; Target Output</div>
+
+          <div class="slide-grid-2">
+            <div class="card">
+              <div class="card-header"><div class="card-title">Deliverables</div><div class="badge">What You Get</div></div>
+              <ul class="list list-compact">
+                <li><strong>Prompt Library</strong> 100+ template.</li>
+                <li><strong>Dokumentasi workflow</strong> per fungsi.</li>
+                <li><strong>Panduan Ethical AI</strong>.</li>
+                <li>Rekaman lengkap sesi.</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <div class="card-header"><div class="card-title">Target Output</div><div class="badge">Impact</div></div>
+              <ul class="list list-compact">
+                <li><strong>25–30 workflow</strong> terdokumentasi.</li>
+                <li><strong>100 prompt</strong> efektif.</li>
+                <li>Target adopsi: <strong>70–80%</strong>.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 13 -->
+        <section class="slide" id="slide-13" aria-label="Slide 13">
+          <div class="slide-kicker">Paket 3 — Intensive Program</div>
+          <div class="slide-title">Pendekatan Komprehensif: AI Playbook</div>
+          <div class="slide-subtitle">Untuk tim yang ingin menjadikan AI bagian strategis sistem kerja.</div>
+
+          <div class="slide-grid">
+            <div class="card">
+              <div class="card-header"><div class="card-title">Gambaran</div><div class="badge">Intensive</div></div>
+              <ul class="list list-compact">
+                <li><strong>Total:</strong> 24 jam (6×4 jam).</li>
+                <li>12 sesi: foundation → deep dive → integrasi → roadmap 120 hari.</li>
+                <li>Fokus: governance, integrasi antar tools, workflow kompleks.</li>
+                <li>Target adopsi: <strong>85–95%</strong>.</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <div class="card-header"><div class="card-title">Investasi</div><div class="badge">Fee</div></div>
+              <div class="price">Rp 28.000.000</div>
+              <div class="price-note">Termasuk pendampingan intensif, AI Playbook, SOP per divisi (belum PPN).</div>
+              <div class="tag-row" style="margin-top:12px;">
+                <div class="tag tag-strong">Strategic</div>
+                <div class="tag">AI Playbook</div>
+                <div class="tag">Deep Dive</div>
+                <div class="tag">Governance</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 14 -->
+        <section class="slide" id="slide-14" aria-label="Slide 14">
+          <div class="slide-kicker">Paket 3 — Intensive Program</div>
+          <div class="slide-title">Rundown Utama (Ringkasan)</div>
+
+          <div class="slide-grid-2">
+            <div class="card">
+              <div class="card-header"><div class="card-title">Hari 1–2</div><div class="badge">Foundation</div></div>
+              <ul class="list list-compact">
+                <li>AI Foundation &amp; Mindset Shift.</li>
+                <li>Prompt Engineering Fundamental.</li>
+                <li>Tool Exploration &amp; Strategy.</li>
+                <li>Identifikasi pain point per divisi.</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <div class="card-header"><div class="card-title">Hari 3–4</div><div class="badge">Deep Dive</div></div>
+              <ul class="list list-compact">
+                <li>Deep Dive Marketing/Admin/Ops.</li>
+                <li>Advanced workflow automation &amp; data analysis.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:12px;">
+            <div class="card-header"><div class="card-title">Hari 5–6</div><div class="badge">Integration</div></div>
+            <ul class="list list-compact">
+              <li>System integration &amp; governance.</li>
+              <li>Ethical AI deep dive.</li>
+              <li>Grand showcase &amp; roadmap 120 hari.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Slide 15 -->
+        <section class="slide" id="slide-15" aria-label="Slide 15">
+          <div class="slide-kicker">Paket 3 — Intensive Program</div>
+          <div class="slide-title">Deliverables &amp; Target Output</div>
+
+          <div class="slide-grid-2">
+            <div class="card">
+              <div class="card-header"><div class="card-title">Deliverables</div><div class="badge">What You Get</div></div>
+              <ul class="list list-compact">
+                <li><strong>AI Playbook</strong> komprehensif (50+ halaman).</li>
+                <li><strong>Prompt Library</strong> 200+ template.</li>
+                <li><strong>SOP workflow</strong> per divisi.</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <div class="card-header"><div class="card-title">Target Output</div><div class="badge">Impact</div></div>
+              <ul class="list list-compact">
+                <li><strong>50+ workflow</strong> terdokumentasi.</li>
+                <li><strong>200 prompt</strong> efektif.</li>
+                <li>Target adopsi: <strong>85–95%</strong>.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 16 -->
+        <section class="slide" id="slide-16" aria-label="Slide 16">
+          <div class="slide-kicker">Perbandingan Paket</div>
+          <div class="slide-title">Ringkasan Tiga Pilihan Program</div>
+          <div class="slide-subtitle">Tabel perbandingan untuk memudahkan keputusan.</div>
+
+          <div class="card" style="margin-top:12px;">
+            <table role="table" aria-label="Perbandingan paket">
+              <thead>
+                <tr><th>Aspek</th><th>Lite</th><th>Medium ⭐</th><th>Intensive</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Total Durasi</td><td>6 jam</td><td>12 jam</td><td>24 jam</td></tr>
+                <tr><td>Jumlah Sesi</td><td>3</td><td>4</td><td>12</td></tr>
+                <tr><td>Investasi</td><td>Rp 8 juta</td><td>Rp 15 juta</td><td>Rp 28 juta</td></tr>
+                <tr><td>Workflow Terbangun</td><td>10–15</td><td>25–30</td><td>50+</td></tr>
+                <tr><td>Prompt Library</td><td>50</td><td>100+</td><td>200+</td></tr>
+                <tr><td>Target Adopsi</td><td>50–60%</td><td>70–80%</td><td>85–95%</td></tr>
+                <tr><td>Kedalaman Materi</td><td>Dasar</td><td>Menengah–Lanjut</td><td>Komprehensif</td></tr>
+                <tr><td>Etika</td><td>Pengenalan</td><td>Moderate + Guidelines</td><td>Deep Dive + Framework</td></tr>
+                <tr><td>Breakout per Divisi</td><td>Tidak</td><td>Ada</td><td>Ada (deep dive)</td></tr>
+                <tr><td>Deliverables</td><td>Prompt Library + Rekaman</td><td>Prompt Library + Docs + Guidelines + Rekaman</td><td>AI Playbook + Prompt Library + SOP</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Slide 17 -->
+        <section class="slide" id="slide-17" aria-label="Slide 17">
+          <div class="slide-kicker">Timeline Implementasi</div>
+          <div class="slide-title">Tiga Fase Transformasi AI</div>
+          <div class="slide-subtitle">Fase untuk memastikan pembelajaran tertanam dan berkelanjutan.</div>
+
+          <div class="slide-grid-2" style="margin-top:12px;">
+            <div class="card">
+              <div class="card-header"><div class="card-title">Fase 1 — Persiapan</div><div class="badge">Kick-off</div></div>
+              <ul class="list list-compact">
+                <li>Kick-off &amp; briefing perwakilan.</li>
+                <li>Penegasan ekspektasi &amp; fokus divisi.</li>
+                <li>Mindset Shift &amp; AI Foundations.</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <div class="card-header"><div class="card-title">Fase 2 — Implementation</div><div class="badge">Execution</div></div>
+              <ul class="list list-compact">
+                <li>Use case development &amp; testing.</li>
+                <li>Advanced practice &amp; workflow building.</li>
+                <li>Breakout per divisi.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:12px;">
+            <div class="card-header"><div class="card-title">Fase 3 — Consolidation</div><div class="badge">Sustain</div></div>
+            <ul class="list list-compact">
+              <li>Showcase &amp; action planning.</li>
+              <li>Dokumentasi best practices.</li>
+              <li>Opsional: follow-up / refresh sessions.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Slide 18 -->
+        <section class="slide" id="slide-18" aria-label="Slide 18">
+          <div class="slide-kicker">Investasi &amp; Ketentuan</div>
+          <div class="slide-title">Skema Pembayaran &amp; Kebijakan</div>
+
+          <div class="slide-grid-2">
+            <div class="card">
+              <div class="card-header"><div class="card-title">Skema Pembayaran</div><div class="badge">Payment Terms</div></div>
+              <ul class="list list-compact">
+                <li><strong>DP 50%</strong> saat penawaran disetujui.</li>
+                <li><strong>Pelunasan 50%</strong> maksimal H-3 sebelum pelaksanaan.</li>
+                <li><strong>Tidak termasuk PPN</strong> (TalentCraftLab non-PKP).</li>
+                <li>Harga sudah termasuk platform, fasilitator, &amp; biaya operasional.</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <div class="card-header"><div class="card-title">Perubahan &amp; Pembatalan</div><div class="badge">Policy</div></div>
+              <ul class="list list-compact">
+                <li>Perubahan jadwal: maksimal 1× dengan pemberitahuan minimal H-7.</li>
+                <li>Pembatalan: biaya 100% jika setelah penandatanganan kesepakatan.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slide 19 -->
+        <section class="slide" id="slide-19" aria-label="Slide 19">
+          <div class="slide-kicker">Next Steps</div>
+          <div class="slide-title">Langkah Selanjutnya untuk NRK &amp; PMN</div>
+          <div class="slide-subtitle">Agar persiapan berjalan lancar, mohon informasi berikut.</div>
+
+          <div class="card">
+            <ul class="list list-compact">
+              <li>Pilihan paket: <strong>Lite / Medium / Intensive</strong>.</li>
+              <li>Daftar nama peserta pelatihan.</li>
+              <li><strong>Pain point spesifik per divisi</strong> (opsional).</li>
+              <li>Tanggal preferensi pelaksanaan (mulai Jan 12, 2026 atau setelahnya).</li>
+              <li>Platform pilihan: <strong>Zoom / Google Meet / Teams</strong>.</li>
+            </ul>
+          </div>
+
+          <div class="card" style="margin-top:12px;">
+            <div class="card-header"><div class="card-title">Contact Person</div><div class="badge">Reach Us</div></div>
+            <ul class="list list-compact">
+              <li>📧 Email: <strong>[email]</strong></li>
+              <li>📱 WhatsApp: <strong>[nomor]</strong></li>
+              <li>💼 LinkedIn: <strong>[profil]</strong></li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Slide 20 -->
+        <section class="slide" id="slide-20" aria-label="Slide 20">
+          <div class="slide-kicker">Penutup</div>
+          <div class="slide-title">Mendampingi Perjalanan Transformasi AI NRK &amp; PMN</div>
+          <div class="slide-subtitle">Program ini dirancang agar AI terasa <strong>ringan, praktis, relevan, dan aman</strong>.</div>
+
+          <div class="slide-grid" style="margin-top:12px;">
+            <div class="card">
+              <ul class="list list-compact">
+                <li><strong>Ringan</strong> — bertahap, tidak membebani mental.</li>
+                <li><strong>Praktis</strong> — diarahkan pada pekerjaan nyata.</li>
+                <li><strong>Relevan</strong> — dibangun dari pain point harian.</li>
+                <li><strong>Aman</strong> — prioritaskan etika &amp; privasi.</li>
+                <li><strong>Quick wins</strong> — manfaat terasa dalam minggu pertama.</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <div style="margin-bottom:12px; padding:10px; border-radius:10px; background:linear-gradient(90deg, rgba(167,243,208,0.12), rgba(191,238,214,0.08)); border:1px solid rgba(167,243,208,0.12)">
+                <div style="font-size:15px;"><span style="color:var(--accent-strong); font-weight:800">“</span> AI bukan menggantikan manusia—AI memperluas kapasitas manusia.</div>
+                <div class="quote-author" style="margin-top:8px;">TalentCraftLab — Craft Your Best Self</div>
+              </div>
+
+              <div style="margin-top:10px; font-size:14px; color:var(--subtext)">
+                Kami siap menjadi mitra belajar bagi NRK &amp; PMN untuk membangun budaya kerja yang <span class="highlight-text">lebih cerdas, kreatif, dan berdaya</span> dengan dukungan AI.
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <div class="slides-footer" aria-hidden="false">
+        <div class="controls" role="group" aria-label="Navigation controls">
+          <button class="btn" id="prevBtn" aria-label="Sebelumnya">←&nbsp;Sebelumnya</button>
+          <button class="btn btn-primary" id="nextBtn" aria-label="Berikutnya">Berikutnya&nbsp;→</button>
+
+          <div class="pager" style="margin-left:12px;">
+            <div id="pageLabel" aria-live="polite">Slide 1 / 20</div>
+            <div class="pager-dots" id="pagerDots" aria-hidden="true" style="margin-left:12px;"></div>
+          </div>
+        </div>
+
+        <div style="display:flex; align-items:center; gap:12px; width:48%;">
+          <div class="progress-rail" aria-hidden="true"><div class="progress-bar" id="progressBar" style="width:0%"></div></div>
+          <div class="key-hint"><span>Gunakan</span><span class="key">←</span><span class="key">→</span><span>untuk navigasi</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const slides = Array.from(document.querySelectorAll(".slide"));
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+      const pageLabel = document.getElementById("pageLabel");
+      const progressBar = document.getElementById("progressBar");
+      const pagerDotsContainer = document.getElementById("pagerDots");
+      let current = 0;
+
+      function buildDots() {
+        pagerDotsContainer.innerHTML = "";
+        slides.forEach((_, index) => {
+          const dot = document.createElement("div");
+          dot.className = "pager-dot" + (index === current ? " active" : "");
+          dot.setAttribute("role","presentation");
+          pagerDotsContainer.appendChild(dot);
+        });
+      }
+
+      function updateUI() {
+        slides.forEach((slide, index) => {
+          slide.classList.toggle("active", index === current);
+        });
+        const total = slides.length;
+        pageLabel.textContent = "Slide " + (current + 1) + " / " + total;
+        const progress = ((current + 1) / total) * 100;
+        progressBar.style.width = progress + "%";
+        prevBtn.disabled = current === 0;
+        nextBtn.disabled = current === total - 1;
+
+        const dots = pagerDotsContainer.querySelectorAll(".pager-dot");
+        dots.forEach((dot, index) => {
+          dot.classList.toggle("active", index === current);
+        });
+      }
+
+      prevBtn.addEventListener("click", () => {
+        if (current > 0) {
+          current -= 1;
+          updateUI();
+        }
+      });
+
+      nextBtn.addEventListener("click", () => {
+        if (current < slides.length - 1) {
+          current += 1;
+          updateUI();
+        }
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowRight") {
+          if (current < slides.length - 1) { current += 1; updateUI(); }
+        } else if (e.key === "ArrowLeft") {
+          if (current > 0) { current -= 1; updateUI(); }
+        }
+      });
+
+      buildDots();
+      updateUI();
+    })();
+  </script>
+</body>
+</html>
